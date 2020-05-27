@@ -4,12 +4,12 @@ import requests
 import os
 
 campaign_id = '12' #change this - take from campaign url
-phishing_url = 'http://j4ck1e.xyz/?rid=' #change to landing page url
+phishing_url = 'http://<ur_phishing_site>/?rid=' #change to landing page url
 
 gophish_webroot = '/home/ubuntu/go/src/github.com/gophish/gophish' #check this - make sure it's right
 static_images_dir = '/static/endpoint/qr/'
 
-auth_header = {'Authorization':'489de2cc780b60779cbc984f9aa42327416dfac0899b49e29c4882d19c479ae0'} #check this - take from gophish account page
+auth_header = {'Authorization':'<ur_api_token>'} #check this - take from gophish account page
 local_url = 'http://127.0.0.1:3333/api/campaigns/' + campaign_id + "/results"
 
 r = requests.get(local_url,headers=auth_header)
