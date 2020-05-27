@@ -13,7 +13,7 @@
 ## use:
 - insert the following to your email template:
 ```
-<img src="http://j4ck1e.xyz/static/qr/{{.RId}}.png" alt="it works!" width="500" height="500">
+<img src="http://<ur_phishing_site>/static/qr/{{.RId}}.png" alt="it works!" width="500" height="500">
 ```
 - (replace with your own phishing url and alt message)
 - run get_qr.py
@@ -22,7 +22,7 @@
 
 grabbing rid from campaign '1' via API:
 ```
-curl localhost:3333/api/campaigns/1/results -H "Authorization: f1e1285cf68ec419174dcce5251523c8b169842e655eed3b4995bf4a5d4627f7" | grep "id" | grep -v "campaign" | cut -d":" -f2 | cut -d'"' -f2
+curl localhost:3333/api/campaigns/1/results -H "Authorization: <ur_api_token>" | grep "id" | grep -v "campaign" | cut -d":" -f2 | cut -d'"' -f2
 ```
 
 generating QR code via API and saving to 'test.png':
