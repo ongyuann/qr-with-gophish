@@ -37,8 +37,10 @@ def make_qr(rid):
     qr_dir = gophish_webroot + static_images_dir
     if not os.path.exists(qr_dir):
         os.makedirs(qr_dir)
+        print ('[+] created qr directory at ' + qr_dir)
     else:
-        os.system('rm ' + qr_dir + '*')
+        os.system('rm ' + qr_dir + '*') #comment this if running multiple qr-code campaigns simultaneously
+        print ('[+] cleared files at ' + qr_dir) #this too
 
     for i in rid:
         qr_file = qr_dir + i + '.png'
