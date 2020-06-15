@@ -55,9 +55,12 @@ rid = grep_rid(r) #array of rids from chosen campaign
 
 def make_qr(rid):
     qr_dir = gophish_webroot + static_images_dir
+    print ('[+] checking if static images directory exists')
     if not os.path.exists(qr_dir):
+        print ('[+] creating static images directory for qr code')
         os.makedirs(qr_dir)
     else:
+        print ('[+] removing old qr codes from static images directory')
         os.system('rm ' + qr_dir + '*')
 
     for i in rid:
